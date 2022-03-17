@@ -12,6 +12,7 @@ const ShoppingItem = ({ item }: Props) => {
                 <span>{item.itemName}</span>
                 <span>{item.quantity}</span>
             </div>
+            <button>X</button>
         </div>
     )
 }
