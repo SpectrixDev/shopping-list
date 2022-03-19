@@ -11,8 +11,8 @@ const ShoppingItem = ({ item, removeItem }: Props) => {
         <div className="animate__animated animate__fadeInUp">
         <div className="item">
             <div className="content">
-                <span>{item.itemName}</span>
                 <span>{item.quantity}</span>
+                <span>{item.itemName}</span>
             </div>
             <button onClick={() => {removeItem(item.itemName)}}>🞬</button>
         </div>
