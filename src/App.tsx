@@ -23,7 +23,7 @@ const App: FC = () => {
     /* Make sure it's not less than 1, cuz like why */
     if (Number(quantity) < 1) {
       /* Change the value of the infoText to reflect this */
-      setInfoText("🚨 Must be greater than 0 🚨")
+      setInfoText("🚨 Quantity must be >= 1 🚨")
     }
     /* Check if item is already in list */
     else if (shoppingList.some(item => item.itemName === newItem.itemName)) {
