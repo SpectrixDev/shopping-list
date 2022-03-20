@@ -55,9 +55,7 @@ const App: FC = () => {
 
       <div className="animate__animated animate__fadeIn">
       <h1>Shopping List</h1>
-      <div className="animate__animated animate__pulse">
-        <h2 className="subtitle">{infoText}</h2>
-      </div>
+      <h2 className="subtitle">{infoText}</h2>
       <div className="header">
           <div className="inputContainer">
             <input type="text" placeholder="Item..." name="item" value={item} onChange={handleChange} />
