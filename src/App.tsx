@@ -24,8 +24,9 @@ const App: FC = () => {
       /* Change the value of the infoText to reflect this */
       setInfoText("❌ Quantity must be >= 1")
     }
-    /* Check if item is already in list */
-    else if (shoppingList.some(item => item.itemName === newItem.itemName)) {
+    /* Check if item is already in list, regardless of capitlisation of letters */
+    else if (shoppingList.some(item => item.itemName.toLowerCase() === newItem.itemName.toLowerCase())) {
+      /* If it is, change the value of the infoText to reflect this */
       setInfoText("❌ Item already in list")
     }
     /* Make sure item is not empty */
