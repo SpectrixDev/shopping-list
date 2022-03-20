@@ -22,15 +22,15 @@ const App: FC = () => {
     /* Make sure it's not less than 1, cuz like why */
     if (Number(quantity) < 1) {
       /* Change the value of the infoText to reflect this */
-      setInfoText("🚨 Quantity must be >= 1 🚨")
+      setInfoText("❌ Quantity must be >= 1")
     }
     /* Check if item is already in list */
     else if (shoppingList.some(item => item.itemName === newItem.itemName)) {
-      setInfoText("🚨 Item already in list 🚨")
+      setInfoText("❌ Item already in list")
     }
     /* Make sure item is not empty */
     else if (newItem.itemName === "" || newItem.itemName === " " || newItem.itemName === "  ") {
-      setInfoText("🚨 Item cannot be empty 🚨")
+      setInfoText("❌ Item cannot be empty")
     }
     else {
       /* Add to the list and set things back to default value */
