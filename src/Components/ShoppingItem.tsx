@@ -11,10 +11,10 @@ const ShoppingItem = ({ item, removeItem }: Props) => {
         <div className="animate__animated animate__fadeInUp">
         <div className="item">
             <div className="content">
-                <span>{item.quantity}</span>
+                <span className="quantity">{item.quantity}</span>
                 <span>{item.itemName}</span>
             </div>
-            <button onClick={() => {removeItem(item.itemName)}}>🞬</button>
+            <button onClick={() => {removeItem(item.itemName)}}>X</button>
         </div>
         </div>
     )

@@ -4,7 +4,6 @@ import ShoppingItem from './Components/ShoppingItem';
 import { IItem } from './Interfaces';
 
 const App: FC = () => {
-
   const [ item, setItem ] = useState<string>("")
   const [ quantity, setQuantity ] = useState<number>(1);
   const [ shoppingList, setShoppingList ] = useState<IItem[]>([]);
@@ -30,7 +29,7 @@ const App: FC = () => {
       setInfoText("🚨 Item already in list 🚨")
     }
     /* Make sure item is not empty */
-    else if (newItem.itemName === "") {
+    else if (newItem.itemName === "" || newItem.itemName === " " || newItem.itemName === "  ") {
       setInfoText("🚨 Item cannot be empty 🚨")
     }
     else {
@@ -47,6 +46,7 @@ const App: FC = () => {
       return item.itemName !== itemToDelete
     }))
   };
+
     
   return (
     <div className="App">
@@ -54,8 +54,10 @@ const App: FC = () => {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
       <div className="animate__animated animate__fadeIn">
-      <h1>Shopping List 🛒</h1>
-      <h2 className="subtitle">{infoText}</h2>
+      <h1>Shopping List</h1>
+      <div className="animate__animated animate__pulse">
+        <h2 className="subtitle">{infoText}</h2>
+      </div>
       <div className="header">
           <div className="inputContainer">
             <input type="text" placeholder="Item..." name="item" value={item} onChange={handleChange} />
